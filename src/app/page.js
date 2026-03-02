@@ -84,15 +84,15 @@ function RotatingTypewriter() {
 
   return (
     <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-wide inline-flex items-center">
-      <span
-        className={`${
-          isCompleted
-            ? "font-bold text-transparent bg-clip-text bg-inear-to-r from-purple-400 to-pink-400 animate-glow"
-            : "text-gray-400"
-        } transition-all duration-500`}
-      >
-        {displayedText}
-      </span>
+   <span
+  className={`${
+    isCompleted
+      ? "font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 animate-glow transition-all duration-500"
+      : "text-gray-400"   // ← no transition here
+  }`}
+>
+  {displayedText}
+</span>
 
       {!isCompleted && (
         <span className="inline-block w-0.5 h-8 md:h-10 bg-purple-400 ml-1 animate-pulse" />
@@ -443,7 +443,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center mt-12">
             <a
-              href="/resume/Muhammad-Awais-Ali-Resume.pdf"
+              href="/resume/Muhammad Awais Ali CV.pdf"
               download
               className="group inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300"
             >
