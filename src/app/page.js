@@ -443,7 +443,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center mt-12">
             <a
-              href="/resume/Muhammad Awais Ali CV.pdf"
+             href="/resume/cv.pdf"
               download
               className="group inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300"
             >
