@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 10 10 20;
+    --foreground: 240 240 250;
+    --primary: 99 102 241;
+    --accent: 251 146 60;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Yeh gradient thoda heavy ho sakta hai, lekin rakhte hain */
+    background: linear-gradient(to bottom, #0a0a14, #0f0f1f); 
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  .section-title {
+    /* Gradient text acha hai, isko rehne dete hain */
+    @apply text-4xl md:text-5xl font-bold text-center mb-16 bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent;
+  }
+  .btn-primary {
+    /* OPTIMIZATION: transition-all ki jagah specific properties use ki hain */
+    @apply px-8 py-4 bg-indigo-500 text-white font-medium rounded-xl hover:scale-105 transition-[transform,background-color] duration-300 shadow-lg shadow-indigo-500/25;
+  }
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-indigo-500 text-indigo-400 font-medium rounded-xl hover:bg-indigo-500 hover:text-white transition-all duration-300;
+  }
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* Add these to your globals.css */
+
+.animate-revealText {
+  animation: revealText 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-letterUp {
+  animation: letterUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-glow {
+  /* Glow aur shadows aksar lag paida karte hain, lekin yeh choti animations hain */
+  animation: glow 3s infinite alternate;
+}
+
+.animate-blob {
+  /* Blob animation bahut complex hai. Agar zyada lag ho toh isko hatana padega. */
+  animation: blob 12s infinite;
+}
+
+@keyframes revealText {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes letterUp {
+  from { opacity: 0; transform: translateY(80px) rotate(10deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
+  to   { text-shadow: 0 0 40px rgba(168, 85, 247, 0.9); }
+}
+
+@keyframes blob {
+  /* Blob mein sirf transform use ho raha hai, jo acha hai. */
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -50px) scale(1.1); }
+  66%      { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
