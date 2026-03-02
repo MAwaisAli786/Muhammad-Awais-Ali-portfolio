@@ -379,16 +379,26 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.1 }}
                 className="flex justify-center lg:justify-end"
               >
-                <div className="relative group">
-                  <div className="absolute -inset-1 sm:-inset-2 bg-linear-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition duration-1000"></div>
-                  <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl">
-                    <img
-                      src="/images/image.jpeg"
-                      alt="Muhammad Awais Ali"
-                      className="w-full h-auto max-h-[80] sm:max-h-[420px] object-cover object-top"
-                    />
-                  </div>
-                </div>
+               <div className="relative group">
+  <div className="absolute -inset-1 sm:-inset-2 bg-linear-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition duration-1000"></div>
+  
+  <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl">
+    <img
+      src="/images/image.jpeg"
+      alt="Muhammad Awais Ali"
+      className="
+        w-full 
+        h-auto 
+        min-h-[280px] 
+        max-h-[400px] 
+        sm:max-h-[420px] 
+        md:max-h-[480px] 
+        object-cover 
+        object-top
+      "
+    />
+  </div>
+</div>
               </motion.div>
 
               <motion.div 
