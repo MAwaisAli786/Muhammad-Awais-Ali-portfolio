@@ -1,6 +1,7 @@
 'use client'; 
 
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
+ 
 import Navbar from './components/Navbar'; 
 import ProjectCard from './components/projectcard'; 
 import { projects } from './data/projects'; 
@@ -672,6 +673,7 @@ export default function Home() {
             >
               <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight">
                 <span className="bg-linear-to-r from-indigo-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+               
                   Get In Touch
                 </span>
               </h1>
@@ -679,136 +681,101 @@ export default function Home() {
                 Have a project in mind? Want to collaborate? Or just wanna say hi?
               </p>
             </motion.div>
+           
+{/* Contact Cards */}
+    <motion.div
+      variants={fadeIn}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ delay: 0.1 }}
+      className="grid gap-5 sm:gap-6 lg:grid-cols-2 lg:gap-8 max-w-5xl mx-auto"
+    >
+      {/* Left side - optional intro or form (currently empty in your code, keeping structure) */}
+      {/* If you want to add a contact form later, this column is ready */}
 
-            <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start">
-
-              <motion.div 
-                variants={fadeIn} 
-                initial="initial" 
-                whileInView="animate" 
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="order-2 lg:order-1"
-              >
-                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8 bg-white/5 backdrop-blur-xl border border-purple-500/20 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-purple-900/30">
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2 sm:mb-3">Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white/10 border border-purple-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300"
-                      placeholder="Muhammad Ahmed"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2 sm:mb-3">Your Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white/10 border border-purple-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300"
-                      placeholder="ahmed@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2 sm:mb-3">Message</label>
-                    <textarea
-                      name="message"
-                      rows="5" 
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white/10 border border-purple-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300 resize-none"
-                      placeholder="Hey Awais! I loved your portfolio..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full group relative py-4 sm:py-5 bg-linear-to-r from-purple-600 to-indigo-600 text-white font-bold text-base sm:text-lg rounded-2xl overflow-hidden shadow-xl shadow-purple-600/50 hover:shadow-2xl hover:shadow-purple-600/70 transform hover:scale-[1.02] transition-all duration-500 flex items-center justify-center gap-2 sm:gap-3"
-                  >
-                    <span className="relative z-10 flex items-center gap-2 sm:gap-3">
-                      Send Message
-                      <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform" />
-                    </span>
-                    <span className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12"></span>
-                  </button>
-                </form>
-              </motion.div>
-
-              <motion.div 
-                variants={fadeIn} 
-                initial="initial" 
-                whileInView="animate" 
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="order-1 lg:order-2 space-y-8 sm:space-y-10"
-              >
-                <div className="text-center lg:text-left">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-200 mb-4 sm:mb-6">Let's Connect</h3>
-                  <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
-                    I'm always open to discussing new opportunities, freelance work, or just having a chat about tech & design.
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-4 sm:gap-6">
-
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=mawaisali2002@gmail.com&su=Inquiry&body=Hello!%20Please let me know the topic of discussion,"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative z-10 cursor-pointer flex items-center gap-4 sm:gap-5 p-4 sm:p-6 bg-linear-to-r from-purple-600/20 to-indigo-600/20 border border-purple-500/30 rounded-2xl hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-500 backdrop-blur-sm"
-                  >
-                    <div className="p-3 sm:p-4 bg-linear-to-r from-purple-600 to-indigo-600 rounded-xl group-hover:scale-110 transition-transform pointer-events-none">
-                      <Mail className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
-                    </div>
-
-                    <div className="pointer-events-none">
-                      <p className="text-gray-300 font-medium text-sm sm:text-base">Email</p>
-                      <p className="text-purple-300 text-base sm:text-lg">mawaisali2002@gmail.com</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/muhammad-awais-ali-335766374"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-4 sm:gap-5 p-4 sm:p-6 bg-white/5 border border-purple-500/30 rounded-2xl hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-500 backdrop-blur-sm"
-                  >
-                    <div className="p-3 sm:p-4 bg-linear-to-r from-blue-500 to-blue-600 rounded-xl group-hover:scale-110 transition-transform">
-                      <Linkedin className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-300 font-medium text-sm sm:text-base">LinkedIn</p>
-                      <p className="text-purple-300 text-base sm:text-lg">@muhammad-awais-ali</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://github.com/MAwaisAli786"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-4 sm:gap-5 p-4 sm:p-6 bg-white/5 border border-purple-500/30 rounded-2xl hover:border-purple-400 hover:bg-purple-500/10 transition-all duration-500 backdrop-blur-sm"
-                  >
-                    <div className="p-3 sm:p-4 bg-linear-to-r from-gray-700 to-gray-900 rounded-xl group-hover:scale-110 transition-transform">
-                      <Github className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-300 font-medium text-sm sm:text-base">GitHub</p>
-                      <p className="text-purple-300 text-base sm:text-lg">@MAwaisAli786</p>
-                    </div>
-                  </a>
-                </div>
-              </motion.div>
+      {/* Right side - contact methods */}
+      <div className="space-y-5 sm:space-y-6 lg:col-span-2 lg:max-w-3xl lg:mx-auto">
+        {/* Email */}
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=mawaisali2002@gmail.com&su=Inquiry&body=Hello!%20Please%20let%20me%20know%20the%20topic%20of%20discussion"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-5 sm:gap-6 p-5 sm:p-6 bg-white/5 backdrop-blur-sm border border-gray-800/60 rounded-2xl hover:border-purple-500/40 hover:bg-white/10 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-purple-900/10"
+        >
+          <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-linear-to-br from-purple-600 to-indigo-600 text-white shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/30">
+            <Mail className="h-6 w-6 sm:h-7 sm:w-7" />
+          </div>
+          <div className="min-w-0">
+            <div className="text-sm sm:text-base font-medium text-gray-300 tracking-wide">Email</div>
+            <div className="text-base sm:text-lg lg:text-xl font-medium text-purple-300 group-hover:text-purple-200 transition-colors truncate">
+              mawaisali2002@gmail.com
             </div>
           </div>
+        </a>
+
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/923448848600"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-5 sm:gap-6 p-5 sm:p-6 bg-white/5 backdrop-blur-sm border border-gray-800/60 rounded-2xl hover:border-green-500/40 hover:bg-white/10 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-green-900/10"
+        >
+          <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-linear-to-br from-green-500 to-emerald-600 text-white shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-green-500/30">
+            <svg
+              className="h-6 w-6 sm:h-7 sm:w-7"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+          </div>
+          <div className="min-w-0">
+            <div className="text-sm sm:text-base font-medium text-gray-300 tracking-wide">WhatsApp</div>
+            <div className="text-base sm:text-lg lg:text-xl font-medium text-green-300 group-hover:text-green-200 transition-colors">
+              +92 344 8848600
+            </div>
+          </div>
+        </a>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/muhammad-awais-ali-335766374"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-5 sm:gap-6 p-5 sm:p-6 bg-white/5 backdrop-blur-sm border border-gray-800/60 rounded-2xl hover:border-blue-500/40 hover:bg-white/10 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-900/10"
+        >
+          <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-blue-700 text-white shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+            <Linkedin className="h-6 w-6 sm:h-7 sm:w-7" />
+          </div>
+          <div className="min-w-0">
+            <div className="text-sm sm:text-base font-medium text-gray-300 tracking-wide">LinkedIn</div>
+            <div className="text-base sm:text-lg lg:text-xl font-medium text-blue-300 group-hover:text-blue-200 transition-colors">
+              Muhammad Awais Ali
+            </div>
+          </div>
+        </a>
+
+        {/* GitHub */}
+        <a
+          href="https://github.com/MAwaisAli786"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-5 sm:gap-6 p-5 sm:p-6 bg-white/5 backdrop-blur-sm border border-gray-800/60 rounded-2xl hover:border-gray-400/50 hover:bg-white/10 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-gray-900/10"
+        >
+          <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-linear-to-br from-gray-800 to-gray-950 text-white shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-gray-700/30">
+            <Github className="h-6 w-6 sm:h-7 sm:w-7" />
+          </div>
+          <div className="min-w-0">
+            <div className="text-sm sm:text-base font-medium text-gray-300 tracking-wide">GitHub</div>
+            <div className="text-base sm:text-lg lg:text-xl font-medium text-gray-200 group-hover:text-white transition-colors">
+              MAwaisAli786
+            </div>
+          </div>
+        </a>
+      </div>
+    </motion.div>
+            </div>
         </section>
 
       </main>
